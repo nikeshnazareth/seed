@@ -2,18 +2,16 @@
 
 ## Overview
 
-Initialising a new project often has a number of standard steps.
+This is a simply the seed Angular project that comes with the angular CLI.
 
-However, in my experience, the initialisation is always slightly different depending on the 
-particular technology or framework. Moreover, integrating the different technologies requires some
-configuration.
+## Usage
 
-This project creates a seed project for every combination of technologies (that I use, obviously),
-and explicitly lists the steps required.
+Run `initialise.sh`. 
 
-## Structure
+This will request a prefix and create the project in a new directory `<prefix>-app`.
 
-Each git branch corresponds to a different technology (frontend, backend, testing, database, authentication, etc)
-or a combination of technologies.
+I expect that nobody will use this version of the repository directly 
+(you could just run the Angular CLI initialisation)
 
-The README in each branch lists the exact steps taken to produce the code on that branch, and how to use the commands.
+Instead, this branch will be merged with branches corresponding to other technologies 
+in order to produce an integrated seed project.
