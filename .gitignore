@@ -1,2 +1,8 @@
 # Webstorm IDE
 .idea
+
+# Dependencies
+node_modules
+
+# The deployed app
+*-app
