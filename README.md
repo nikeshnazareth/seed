@@ -19,3 +19,5 @@ and adding Typescript annotations where appropriate.
 npm install -g create-react-app
 create-react-app sample-app --scripts-version=react-scripts-ts
 ```
+
+2. Modify components as desired (use the components in the sample app as a guide)
