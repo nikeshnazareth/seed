@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ChangeEvent, Component, FormEvent } from 'react';
-import Server, { INewRecord } from "../Server";
+import Server, { INewRecord } from '../Server';
 
 class PostForm extends Component {
 
@@ -16,8 +16,8 @@ class PostForm extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div>
                         <label>Title:</label><br/>
-                        <input type="text"
-                               name="title"
+                        <input type='text'
+                               name='title'
                                onChange={this.onTitleChange}
                                value={this.state.title}
                         />
@@ -25,23 +25,23 @@ class PostForm extends Component {
                     <br/>
                     <div>
                         <label>Body:</label><br/>
-                        <textarea name="body"
+                        <textarea name='body'
                                   onChange={this.onBodyChange}
                                   value={this.state.body}/>
                     </div>
                     <br/>
-                    <button type="submit">Submit</button>
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
         );
     };
 
     private onTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        this.setState({title: e.target.value})
+        this.setState({title: e.target.value});
     };
 
     private onBodyChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        this.setState({body: e.target.value})
+        this.setState({body: e.target.value});
     };
 
     private onSubmit = (e: FormEvent<HTMLFormElement>) => {
