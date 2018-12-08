@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ChangeEvent, Component, FormEvent } from 'react';
+import Server, { INewRecord } from "../Server";
 
 class PostForm extends Component {
 
@@ -46,31 +47,15 @@ class PostForm extends Component {
     private onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const record: INewRecord = {
-            body: this.state.body,
-            title: this.state.title
-        };
-
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            body: JSON.stringify(record),
-            headers: {
-                'content-type': 'application/json'
-            },
-            method: 'POST'
-        })
-            .then(res => res.json())
-            // tslint:disable-next-line
+        const record: INewRecord = this.state;
+        Server.post(record)
+        // tslint:disable-next-line
             .then(data => console.log(data));
     };
 
 }
 
 interface IState {
-    body: string;
-    title: string;
-}
-
-interface INewRecord {
     body: string;
     title: string;
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
+import Server, { IRecord } from '../Server';
 
 class Posts extends Component {
 
@@ -8,8 +9,7 @@ class Posts extends Component {
     };
 
     public componentDidMount(): void {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(res => res.json())
+        Server.get()
             .then(data => this.setState({posts: data}));
     }
 
@@ -31,13 +31,6 @@ class Posts extends Component {
 
 interface IState {
     posts: IRecord[];
-}
-
-interface IRecord {
-    id: number;
-    userId: number;
-    title: string;
-    body: string;
 }
 
 export default Posts;
