@@ -1,13 +1,21 @@
-# Seed Project: React Typescript
+# Seed Project: React Typescript Redux
 
 ## Overview
 
-This branch creates contains example React Components with Typescript annotations.
+This branch creates a sample React Typescript app that uses Redux.
 
-It does not have a sample project since `create-react-app` already produces a working app
-with serve, build and test scripts.
+The app is a sub-folder of this project, since I think it is preferable to re-run `create-react-app`
+for every project, instead of cloning this repo. Nevertheless, it should serve as a guide for how to wire
+React and Redux together.
 
-## Usage
+This project was created by following the tutorial [here](https://www.youtube.com/watch?v=93p3LxR9xfM&t=683s)
+and adding Typescript annotations where appropriate.
 
-1. Run `create-react-app [project name] --scripts-version=react-scripts-ts`
-1. Use the components in `./example-components` as a guide for type annotations on React components
+
+## Steps to reproduce
+
+1. Create react app
+```
+npm install -g create-react-app
+create-react-app sample-app --scripts-version=react-scripts-ts
+```
