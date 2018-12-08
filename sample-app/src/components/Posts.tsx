@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import { Component } from 'react';
 
 class Posts extends Component {
@@ -38,7 +38,6 @@ interface IRecord {
     userId: number;
     title: string;
     body: string;
-
 }
 
 export default Posts;
