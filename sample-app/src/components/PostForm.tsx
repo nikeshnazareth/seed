@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { ChangeEvent, Component, FormEvent } from 'react';
-import Server, { INewRecord } from '../Server';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 
-class PostForm extends Component {
+import { newPost } from '../reducers/post/post.actions';
+import { NewPostAction } from '../reducers/post/post.actions.type';
+import { INewRecord } from '../Server';
+
+class PostForm extends Component<IPostForm> {
 
     public state: IState = {
         body: '',
@@ -48,11 +53,8 @@ class PostForm extends Component {
         e.preventDefault();
 
         const record: INewRecord = this.state;
-        Server.post(record)
-        // tslint:disable-next-line
-            .then(data => console.log(data));
+        this.props.newPost(record);
     };
-
 }
 
 interface IState {
@@ -60,4 +62,8 @@ interface IState {
     title: string;
 }
 
-export default PostForm;
+interface IPostForm {
+    newPost: (record: INewRecord) => (dispatch: Dispatch<NewPostAction>) => void;
+}
+
+export default connect(null, {newPost})(PostForm);
